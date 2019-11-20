@@ -11,6 +11,7 @@ var mock_pokemons_1 = require("./mock-pokemons");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = "Liste des pokémons";
+        this.value = "";
     }
     AppComponent.prototype.ngOnInit = function () {
         this.pokemons = mock_pokemons_1.POKEMONS;
@@ -20,6 +21,9 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.onClick = function () {
         console.log('Clic !');
+    };
+    AppComponent.prototype.onKey = function (event) {
+        this.value = 'Bonjour ' + event.target.value;
     };
     AppComponent = __decorate([
         core_1.Component({

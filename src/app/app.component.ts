@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { Pokemon } from "./pokemon";
 import { POKEMONS } from "./mock-pokemons";
+import { R3TargetBinder } from "@angular/compiler";
 
 @Component({
   selector: "pokemon-app",
@@ -11,6 +12,7 @@ export class AppComponent implements OnInit {
 
   private pokemons: Pokemon[];
   private title: string = "Liste des pokémons";
+  private value: string = "";
 
   ngOnInit() {
     this.pokemons = POKEMONS;
@@ -22,5 +24,9 @@ export class AppComponent implements OnInit {
 
   onClick() {
     console.log('Clic !');
+  }
+
+  onKey(event: KeyboardEvent) {
+    this.value = 'Bonjour ' + (<HTMLInputElement>event.target).value;
   }
 }
