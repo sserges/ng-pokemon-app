@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Pokemon } from "./pokemon";
 
 @Component({
   selector: "pokemon-app",
@@ -8,4 +9,5 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   name = "Angular";
+  private pokemons: Pokemon[];
 }
