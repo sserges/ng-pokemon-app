@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   private pokemons: Pokemon[];
   private title: string = "Liste des pokémons";
-  values = '';
+
 
   ngOnInit() {
     this.pokemons = POKEMONS;
