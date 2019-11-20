@@ -18,6 +18,9 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.selectPokemon = function (pokemon) {
         alert("Vous avez cliqué sur " + pokemon.name);
     };
+    AppComponent.prototype.onClick = function () {
+        console.log('Clic !');
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: "pokemon-app",
