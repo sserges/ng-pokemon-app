@@ -8,5 +8,6 @@
 
 <button (click)="onClick()" >Cliquer ici!</button>
 
-<input (keyup)="onKey($event)" />
+<input #box (keyup)="onKey(box.value)" />
+<p>{{ box.value }}</p>
 <p>{{ value }}</p>

@@ -22,8 +22,8 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.onClick = function () {
         console.log('Clic !');
     };
-    AppComponent.prototype.onKey = function (event) {
-        this.value = 'Bonjour ' + event.target.value;
+    AppComponent.prototype.onKey = function (value) {
+        this.value = 'Bonjour ' + value;
     };
     AppComponent = __decorate([
         core_1.Component({
