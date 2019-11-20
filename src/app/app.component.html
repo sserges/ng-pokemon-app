@@ -1,13 +1,5 @@
 <h1>{{ title }}</h1>
 
-<ul>
-    <li>Bulbizzare</li>
-    <li>Salamèche</li>
-    <li>Carapuce</li>
-</ul>
+<input #box (keyup.enter)="values=box.value" />
 
-<button (click)="onClick()" >Cliquer ici!</button>
-
-<input #box (keyup)="onKey(box.value)" />
-<p>{{ box.value }}</p>
-<p>{{ value }}</p>
+<p>{{ values }}</p>
