@@ -16,6 +16,12 @@ var BorderCardDirective = /** @class */ (function () {
         this.setBorder('#f5f5f5');
         this.setHeight(180);
     }
+    BorderCardDirective.prototype.onMouseEnter = function () {
+        this.setBorder('#009688');
+    };
+    BorderCardDirective.prototype.onMouseLeave = function () {
+        this.setBorder('#f5f5f5');
+    };
     BorderCardDirective.prototype.setBorder = function (color) {
         var border = 'solid 4px ' + color;
         this.el.nativeElement.style.border = border;
@@ -23,6 +29,18 @@ var BorderCardDirective = /** @class */ (function () {
     BorderCardDirective.prototype.setHeight = function (height) {
         this.el.nativeElement.style.height = height + 'px';
     };
+    __decorate([
+        core_1.HostListener('mouseenter'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], BorderCardDirective.prototype, "onMouseEnter", null);
+    __decorate([
+        core_1.HostListener('mouseleave'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], BorderCardDirective.prototype, "onMouseLeave", null);
     BorderCardDirective = __decorate([
         core_1.Directive({
             selector: '[pkmnBorderCard]'
