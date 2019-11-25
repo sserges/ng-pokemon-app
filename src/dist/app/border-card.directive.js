@@ -13,14 +13,17 @@ var core_1 = require("@angular/core");
 var BorderCardDirective = /** @class */ (function () {
     function BorderCardDirective(el) {
         this.el = el;
-        this.setBorder('#f5f5f5');
-        this.setHeight(180);
+        this.initialColor = '#f5f5f5';
+        this.defaultColor = '#009688';
+        this.defaultHeight = 180;
+        this.setBorder(this.initialColor);
+        this.setHeight(this.defaultHeight);
     }
     BorderCardDirective.prototype.onMouseEnter = function () {
-        this.setBorder(this.borderColor || '#009688');
+        this.setBorder(this.borderColor || this.defaultColor);
     };
     BorderCardDirective.prototype.onMouseLeave = function () {
-        this.setBorder('#f5f5f5');
+        this.setBorder(this.initialColor);
     };
     BorderCardDirective.prototype.setBorder = function (color) {
         var border = 'solid 4px ' + color;
