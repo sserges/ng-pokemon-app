@@ -9,11 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
-var border_card_directive_1 = require("./border-card.directive");
-var pokemon_type_color_pipe_1 = require("./pokemon-type-color.pipe");
+var border_card_directive_1 = require("./pokemons/border-card.directive");
+var pokemon_type_color_pipe_1 = require("./pokemons/pokemon-type-color.pipe");
 var app_routing_module_1 = require("./app-routing.module");
-var list_pokemon_component_1 = require("./list-pokemon.component");
-var detail_pokemon_component_1 = require("./detail-pokemon.component");
+var list_pokemon_component_1 = require("./pokemons/list-pokemon.component");
+var detail_pokemon_component_1 = require("./pokemons/detail-pokemon.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { Pokemon } from "./pokemon";
+import { Pokemon } from "./pokemons/pokemon";
 import { POKEMONS } from "./mock-pokemons";
 
 
