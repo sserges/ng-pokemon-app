@@ -8,13 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var list_pokemon_component_1 = require("./pokemons/list-pokemon.component");
-var detail_pokemon_component_1 = require("./pokemons/detail-pokemon.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 // routes
 var appRoutes = [
-    { path: 'pokemons', component: list_pokemon_component_1.ListPokemonComponent },
-    { path: 'pokemon/:id', component: detail_pokemon_component_1.DetailPokemonComponent },
     { path: '', redirectTo: 'pokemons', pathMatch: 'full' },
     { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];

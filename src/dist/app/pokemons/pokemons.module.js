@@ -12,13 +12,15 @@ var list_pokemon_component_1 = require("./list-pokemon.component");
 var detail_pokemon_component_1 = require("./detail-pokemon.component");
 var border_card_directive_1 = require("./border-card.directive");
 var pokemon_type_color_pipe_1 = require("./pokemon-type-color.pipe");
+var pokemons_routing_module_1 = require("./pokemons-routing.module");
 var PokemonsModule = /** @class */ (function () {
     function PokemonsModule() {
     }
     PokemonsModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule
+                common_1.CommonModule,
+                pokemons_routing_module_1.PokemonRoutingModule
             ],
             declarations: [
                 list_pokemon_component_1.ListPokemonComponent,

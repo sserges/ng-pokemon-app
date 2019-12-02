@@ -2,21 +2,18 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import { BorderCardDirective } from './pokemons/border-card.directive';
-import { PokemonTypeColorPipe } from './pokemons/pokemon-type-color.pipe';
 import { AppRoutingModule } from './app-routing.module';
-import { ListPokemonComponent } from './pokemons/list-pokemon.component';
-import { DetailPokemonComponent } from './pokemons/detail-pokemon.component';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { PokemonsModule } from './pokemons/pokemons.module';
 
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule ],
+  imports:      [ 
+    BrowserModule,
+    PokemonsModule,
+    AppRoutingModule 
+  ],
   declarations: [ 
     AppComponent, 
-    BorderCardDirective, 
-    PokemonTypeColorPipe,
-    ListPokemonComponent,
-    DetailPokemonComponent,
     PageNotFoundComponent
   ],
   bootstrap:    [ AppComponent ]

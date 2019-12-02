@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var mock_pokemons_1 = require("../mock-pokemons");
+var mock_pokemons_1 = require("./mock-pokemons");
 var ListPokemonComponent = /** @class */ (function () {
     function ListPokemonComponent(router) {
         this.router = router;
@@ -28,7 +28,7 @@ var ListPokemonComponent = /** @class */ (function () {
     ListPokemonComponent = __decorate([
         core_1.Component({
             selector: "list-pokemon",
-            templateUrl: "./app/list-pokemon.component.html"
+            templateUrl: "./app/pokemons/list-pokemon.component.html"
         }),
         __metadata("design:paramtypes", [router_1.Router])
     ], ListPokemonComponent);

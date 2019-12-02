@@ -9,24 +9,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
-var border_card_directive_1 = require("./pokemons/border-card.directive");
-var pokemon_type_color_pipe_1 = require("./pokemons/pokemon-type-color.pipe");
 var app_routing_module_1 = require("./app-routing.module");
-var list_pokemon_component_1 = require("./pokemons/list-pokemon.component");
-var detail_pokemon_component_1 = require("./pokemons/detail-pokemon.component");
 var page_not_found_component_1 = require("./page-not-found.component");
+var pokemons_module_1 = require("./pokemons/pokemons.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                pokemons_module_1.PokemonsModule,
+                app_routing_module_1.AppRoutingModule
+            ],
             declarations: [
                 app_component_1.AppComponent,
-                border_card_directive_1.BorderCardDirective,
-                pokemon_type_color_pipe_1.PokemonTypeColorPipe,
-                list_pokemon_component_1.ListPokemonComponent,
-                detail_pokemon_component_1.DetailPokemonComponent,
                 page_not_found_component_1.PageNotFoundComponent
             ],
             bootstrap: [app_component_1.AppComponent]
