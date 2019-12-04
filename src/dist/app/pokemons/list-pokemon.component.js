@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var mock_pokemons_1 = require("./mock-pokemons");
 var pokemons_service_1 = require("./pokemons.service");
 var ListPokemonComponent = /** @class */ (function () {
     function ListPokemonComponent(router, pokemonsService) {
@@ -20,7 +19,7 @@ var ListPokemonComponent = /** @class */ (function () {
         this.title = "Liste des pokémons";
     }
     ListPokemonComponent.prototype.ngOnInit = function () {
-        this.pokemons = mock_pokemons_1.POKEMONS;
+        this.pokemons = this.pokemonsService.getPokemons();
     };
     ListPokemonComponent.prototype.selectPokemon = function (pokemon) {
         console.log("Vous avez cliqué sur " + pokemon.name);
