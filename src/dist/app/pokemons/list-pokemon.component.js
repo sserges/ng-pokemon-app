@@ -12,9 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var mock_pokemons_1 = require("./mock-pokemons");
+var pokemons_service_1 = require("./pokemons.service");
 var ListPokemonComponent = /** @class */ (function () {
-    function ListPokemonComponent(router) {
+    function ListPokemonComponent(router, pokemonsService) {
         this.router = router;
+        this.pokemonsService = pokemonsService;
         this.title = "Liste des pokémons";
     }
     ListPokemonComponent.prototype.ngOnInit = function () {
@@ -30,7 +32,7 @@ var ListPokemonComponent = /** @class */ (function () {
             selector: "list-pokemon",
             templateUrl: "./app/pokemons/list-pokemon.component.html"
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, pokemons_service_1.PokemonsService])
     ], ListPokemonComponent);
     return ListPokemonComponent;
 }());
