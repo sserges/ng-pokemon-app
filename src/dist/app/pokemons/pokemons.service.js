@@ -46,6 +46,13 @@ var PokemonsService = /** @class */ (function () {
             'Poison', 'Fée', 'Vol'
         ];
     };
+    PokemonsService.prototype.updatePokemon = function (pokemon) {
+        var _this = this;
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("updated pokemon id=" + pokemon.id); }), operators_1.catchError(this.handleError('updatedPokemon')));
+    };
     PokemonsService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.HttpClient])
