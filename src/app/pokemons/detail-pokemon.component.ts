@@ -24,6 +24,14 @@ export class DetailPokemonComponent implements OnInit {
 		);
 	}
 
+	delete(pokemon: Pokemon): void {
+		if (confirm('Voulez-vous vraiment supprimer ce pokémon?')) {
+			this.pokemonsService.deletePokemon(pokemon).subscribe(
+				_ => this.goBack()
+			);
+		}
+	}
+
 	goBack(): void {
 		this.router.navigate(['/pokemons']);
 	}

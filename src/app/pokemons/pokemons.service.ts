@@ -51,6 +51,18 @@ export class PokemonsService {
     ];
   }
 
+  deletePokemon(pokemon: Pokemon): Observable<Pokemon> {
+    const url = `${this.pokemonsUrl}/${pokemon.id}`
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+
+    return this.http.delete<Pokemon>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted pokemon id=${pokemon.id}`)),
+      catchError(this.handleError<Pokemon>('deletePokemon'))
+    );
+  }
+
   updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -59,6 +71,17 @@ export class PokemonsService {
     return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe(
       tap(_ => this.log(`updated pokemon id=${pokemon.id}`)),
       catchError(this.handleError<any>('updatedPokemon'))
+    );
+  }
+
+  searchPokemons(term: string): Observable<Pokemon[]> {
+    if (!term.trim()) {
+      return of([])
+    }
+
+    return this.http.get<Pokemon[]>(`${this.pokemonsUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found pokemons matching "${term}"`)),
+      catchError(this.handleError<Pokemon[]>('searchPokemons', []))
     );
   }
 

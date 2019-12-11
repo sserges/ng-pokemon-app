@@ -35,8 +35,15 @@
       </table>
     </div>
     <div class="card-action">
-      <a (click)="goBack()">Retour</a>
-      <a (click)="goEdit(pokemon)">Editer</a>
+      <a (click)="goBack()" class="waves-effect waves-light btn">
+        <i class="material-icons left">chevron_left</i>Retour
+      </a>{{' '}}
+      <a (click)="goEdit(pokemon)" class="waves-effect waves-light btn">
+        <i class="material-icons left">edit</i>Editer
+      </a>{{' '}}
+      <a (click)="delete(pokemon)" class="waves-effect waves-light btn">
+        <i class="material-icons left">delete</i>Supprimer
+      </a>
     </div>
   </div>
 </div>

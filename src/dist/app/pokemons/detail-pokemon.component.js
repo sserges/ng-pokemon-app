@@ -24,6 +24,12 @@ var DetailPokemonComponent = /** @class */ (function () {
         var id = +this.route.snapshot.paramMap.get('id');
         this.pokemonsService.getPokemon(id).subscribe(function (pokemon) { return _this.pokemon = pokemon; });
     };
+    DetailPokemonComponent.prototype.delete = function (pokemon) {
+        var _this = this;
+        if (confirm('Voulez-vous vraiment supprimer ce pokémon?')) {
+            this.pokemonsService.deletePokemon(pokemon).subscribe(function (_) { return _this.goBack(); });
+        }
+    };
     DetailPokemonComponent.prototype.goBack = function () {
         this.router.navigate(['/pokemons']);
     };

@@ -46,12 +46,27 @@ var PokemonsService = /** @class */ (function () {
             'Poison', 'Fée', 'Vol'
         ];
     };
+    PokemonsService.prototype.deletePokemon = function (pokemon) {
+        var _this = this;
+        var url = this.pokemonsUrl + "/" + pokemon.id;
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        return this.http.delete(url, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("deleted pokemon id=" + pokemon.id); }), operators_1.catchError(this.handleError('deletePokemon')));
+    };
     PokemonsService.prototype.updatePokemon = function (pokemon) {
         var _this = this;
         var httpOptions = {
             headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
         };
         return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("updated pokemon id=" + pokemon.id); }), operators_1.catchError(this.handleError('updatedPokemon')));
+    };
+    PokemonsService.prototype.searchPokemons = function (term) {
+        var _this = this;
+        if (!term.trim()) {
+            return rxjs_1.of([]);
+        }
+        return this.http.get(this.pokemonsUrl + "/?name=" + term).pipe(operators_1.tap(function (_) { return _this.log("found pokemons matching \"" + term + "\""); }), operators_1.catchError(this.handleError('searchPokemons', [])));
     };
     PokemonsService = __decorate([
         core_1.Injectable(),
